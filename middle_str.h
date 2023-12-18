@@ -1,6 +1,7 @@
 #include <string>
 using namespace std;
 
+string itc_reverse_str(string str);
 string itc_slice_str(string str, int start, int end);
 long long itc_len(string str);
 bool itc_isDigit(unsigned char c);
