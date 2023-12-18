@@ -43,6 +43,7 @@ bool itc_isFirstInSecond(string s1, string s2) {
 	bool ch = false;
 	int check = 0;
 	if (itc_len(s1) > itc_len(s2)) return false;
+	if (s1 == "") return true;
 	for (int i = 0; i < itc_len(s2) - itc_len(s1)+1; i++) {
 		for (int j = 0; j < itc_len(s1); j++) {
 			if (s2[i+j] == s1[j]) {
