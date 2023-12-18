@@ -28,17 +28,15 @@ string itc_maxCharWord(string str) {
 }
 
 char itc_sameChar(string str) {
-	char res;
 	for (int i = 0; i < itc_len(str); i++) {
 		if (!(str[i] >= '!' && str[i] <= '@') || !(str[i] >= '[' && str[i] <= '`') || !(str[i] >= '{' && str[i] <= '~')) {
-			for (int j = i + 1; j < itc_len(str); j++) {
+			for (int j = i+1; j < itc_len(str); j++) {
 				if (str[i] == str[j]) {
-					res = str[i];
+					return str[i];
 				}
 			}
 		}
 	}
-	return res;
 }
 
 bool itc_isFirstInSecond(string s1, string s2) {
