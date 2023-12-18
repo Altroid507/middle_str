@@ -63,26 +63,24 @@ bool itc_isFirstInSecond(string s1, string s2) {
 string itc_Cezar(string str, int k) {
 	for (int i = 0; i < itc_len(str); i++) {
 		if (str[i] >= 'a' && str[i] <= 'z') {
-			str[i] += k;
-			if (str[i] > 'z') {
-				int a = str[i] - 'z';
-				str[i] = 'a' - 1 + a;
+			if (str[i] + k > 'z') {
+				int a = (str[i] + k) % 'z';
+				str[i] = 'a' + a - 1;
 			}
-			if (str[i] < 'a') {
-				int a = 'a' - str[i];
-				str[i] = 'z' + 1 - a;
+			if (str[i] + k < 'a') {
+				int a = 'a' % (str[i] + k);
+				str[i] = 'z' - a + 1;
 			}
 		}
-		if (str[i] >= 'A' && str[i] <= 'Z') {
-			str[i] += k;
-			if (str[i] > 'Z') {
-				int a = str[i] - 'Z';
-				str[i] = 'A' - 1 + a;
-			}
-			if (str[i] < 'A') {
-				int a = 'A' - str[i];
-				str[i] = 'Z' + 1 - a;
-			}
+		else if (str[i] >= 'A' && str[i] <= 'Z') {
+				if (str[i] + k > 'z') {
+					int a = (str[i] + k) % 'Z';
+					str[i] = 'A' + a - 1;
+				}
+				if (str[i] + k < 'A') {
+					int a = 'A' % (str[i] + k);
+					str[i] = 'Z' - a + 1;
+				}
 		}
 	}
 	return str;
