@@ -4,7 +4,7 @@
 
 using namespace std;
 
-long long itc_len(string str) {		//Ñîáñòâåííàÿ ôóíêöèÿ
+long long itc_len(string str) {		//Ã‘Ã®Ã¡Ã±Ã²Ã¢Ã¥Ã­Ã­Ã Ã¿ Ã´Ã³Ã­ÃªÃ¶Ã¨Ã¿
 	long long size;
 	size = 0;
 	for (int i = 0; str[i] != '\0'; i++) {
@@ -13,7 +13,7 @@ long long itc_len(string str) {		//Ñîáñòâåííàÿ ôóíêöèÿ
 	return size;
 }
 
-string itc_slice_str(string str, int start, int end) {		//Ñîáñòâåííàÿ ôóíêöèÿ
+string itc_slice_str(string str, int start, int end) {		//Ã‘Ã®Ã¡Ã±Ã²Ã¢Ã¥Ã­Ã­Ã Ã¿ Ã´Ã³Ã­ÃªÃ¶Ã¨Ã¿
 	string res;
 	if (start > end) return str;
 	if (end < itc_len(str)) {
@@ -29,7 +29,15 @@ string itc_slice_str(string str, int start, int end) {		//Ñîáñòâåííàÿ ôóíêöèÿ
 	return res;
 }
 
-unsigned char itc_toLower(unsigned char c) {	//Ñîáñòâåííàÿ ôóíêöèÿ
+unsigned char itc_toLower(unsigned char c) {	//Ã‘Ã®Ã¡Ã±Ã²Ã¢Ã¥Ã­Ã­Ã Ã¿ Ã´Ã³Ã­ÃªÃ¶Ã¨Ã¿
 	if (c >= 65 && c <= 90) return c += 32;
 	return c;
+}
+
+string itc_reverse_str(string str) {
+	string rev;
+	for (int i = 0; i < itc_len(str); i++) {
+		rev += str[itc_len(str) - i - 1];
+	}
+	return rev;
 }
