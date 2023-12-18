@@ -67,20 +67,23 @@ string itc_Cezar(string str, int k) {
 				int a = (str[i] + k) % 'z';
 				str[i] = 'a' + a - 1;
 			}
-			if (str[i] + k < 'a') {
+			else if (str[i] + k < 'a') {
 				int a = 'a' % (str[i] + k);
 				str[i] = 'z' - a + 1;
 			}
+			else str[i] = str[i] + k;
+
 		}
-		else if (str[i] >= 'A' && str[i] <= 'Z') {
-				if (str[i] + k > 'z') {
-					int a = (str[i] + k) % 'Z';
-					str[i] = 'A' + a - 1;
-				}
-				if (str[i] + k < 'A') {
-					int a = 'A' % (str[i] + k);
-					str[i] = 'Z' - a + 1;
-				}
+		if (str[i] >= 'A' && str[i] <= 'Z') {
+			if (str[i] + k > 'z') {
+				int a = (str[i] + k) % 'Z';
+				str[i] = 'A' + a - 1;
+			}
+			else if (str[i] + k < 'A') {
+				int a = 'A' % (str[i] + k);
+				str[i] = 'Z' - a + 1;
+			}
+			else str[i] = str[i] + k;
 		}
 	}
 	return str;
