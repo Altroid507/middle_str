@@ -7,6 +7,7 @@ using namespace std;
 string itc_maxCharWord(string str) {
 	int space1 = 0, space2;
 	string maxim = "";
+	str = itc_rmFreeSpace(str);
 	str = " " + str + " ";
 	for (int i = 1; i <= itc_len(str); i++) {
 		if (str[i] == ' ') {
