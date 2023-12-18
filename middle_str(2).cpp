@@ -90,7 +90,7 @@ string itc_Cezar(string str, int k) {
 }
 
 string itc_rmFreeSpace(string str) {
-	bool spch = false;
+	bool spch = true;
 	string res = "";
 	for (int i = 0; i < itc_len(str); i++) {
 		if (str[i] != ' ') {
@@ -104,5 +104,20 @@ string itc_rmFreeSpace(string str) {
 			}
 		}
 	}
+	str = itc_reverse_str(res);
+	res = "";
+	for (int i = 0; i < itc_len(str); i++) {
+		if (str[i] != ' ') {
+			res += str[i];
+			spch = false;
+		}
+		else {
+			if (spch == false) {
+				res += str[i];
+				spch = true;
+			}
+		}
+	}
+	res = itc_reverse_str(res);
 	return res;
 }
