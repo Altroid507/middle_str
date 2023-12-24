@@ -41,3 +41,15 @@ string itc_reverse_str(string str) {
 	}
 	return rev;
 }
+
+long long itc_changeNum(long long number, long long step) {
+	long long res = 0;
+	long long base = 1;
+	while (number > 0) {
+		int d = number % step;
+		res = d * base + res;
+		base = base * 10;
+		number = number / step;
+	}
+	return res;
+}
